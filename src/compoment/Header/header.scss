@@ -1,0 +1,49 @@
+@use "../../SCSS/" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 2rem 5rem;
+  gap: 4rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: height 0.3s ease, background-color 0.3s ease;
+  &.shrink {
+    height: 60px;
+
+    background-color: #ccc;
+  }
+  .navbar-menu {
+    display: flex;
+    gap: 2rem;
+    cursor: pointer;
+    justify-content: center;
+
+    h4 {
+      font-size: 2rem;
+      color: $white;
+      position: relative;
+
+      &:hover {
+        color: $active-color;
+      }
+      &::after {
+        content: "";
+        width: 0;
+        background-color: $active-color;
+        height: 3px;
+        transition: all 0.5s ease;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      &.active::after {
+        width: 100%;
+      }
+    }
+  }
+}

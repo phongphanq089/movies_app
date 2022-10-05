@@ -10,8 +10,8 @@ import Footer from "./compoment/Footer/Footer";
 const App = () => {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <div className="container">
           <Routes>
             <Route path="/" element={<Trending />} />
